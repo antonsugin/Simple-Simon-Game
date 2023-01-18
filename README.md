@@ -1,1 +1,1 @@
-# simple-simon-game-anton
+# Simple-Simon-Game
