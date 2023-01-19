@@ -1,6 +1,177 @@
 @import 'variables';
 @import 'mixins';
 
-.pop {
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+    font-size: 62.5%;
+ }
+
+ body {
+    background-color: $primary-color;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 5rem 0;
+    color: $txt-color;
+    letter-spacing: $spacing;
+    font-family: $fonts;
+    font-weight: 700;
+    font-size: 5rem;
+
+    @media screen and (max-width: 600px) {
+        & {
+            font-size: 3rem;
+        }
+    }
+}
+
+button {
+    background-color: $secondary-color;
+    color: $txt-color;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    letter-spacing: $spacing;
+    display: inline-block;
+    font-family: $fonts;
+    font-weight: 700;
+    font-size: 1.7rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #03C988;
+        color: white;
+    }
+
+    &:focus {
+        background-color: $secondary-color;
+        color: $txt-color;
+    }
+
+    @media screen and (max-width: 600px) {
+        & {
+            padding: .8rem 1.7rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.players {
+    display: flex;
+    color: $secondary-color;
+    letter-spacing: $spacing;
+
+    &__names, &__wins {
+        @include flex-font;
+    }
+
+    &__wins {
+        color: $txt-color;
+        margin-left: 3rem;
+
+        & :not(:last-child) {
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__names :not(:last-child) {
+        margin-bottom: 5rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        &__names, &__wins {
+            gap: 3rem;
+        }
+
+        &__wins :not(:last-child){
+            margin-bottom: 0;
+        }
+        &__names :not(:last-child){
+            margin-bottom: 0;
+        }
+    }
+}
+
+.shapes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: $gap;
+}
+
+.blue {
+    @include shapes (#205295);
+    margin-right: $gap;
+
+    &:hover {
+        @include hover;
+    }
+}
+
+.green {
+    @include shapes (#379237);
+
+    &:hover {
+        @include hover;
+    }
+}
+
+.red {
+    @include shapes (#CD0404);
+    margin-right: $gap;
+
+    &:hover {
+        @include hover;
+    }
+}
+
+.yellow {
+    @include shapes (#FFEA20);
+
+    &:hover {
+        @include hover;
+    }
+}
+
+.navigation {
+    @include flex-font;
+
+    & :not(:last-child) {
+        margin-bottom: 5rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        & {
+            flex-direction: column-reverse;
+            gap: 1rem;
+        }
+
+        & :not(:last-child) {
+            margin-bottom: 0;
+        }
+    }
     
 }
+
+.is-active {
+    @include hover;
+}
+

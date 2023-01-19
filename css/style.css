@@ -1,1 +1,236 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #540375;
+}
+
+h1 {
+  text-align: center;
+  margin: 5rem 0;
+  color: #FF734B;
+  letter-spacing: 2px;
+  font-family: "Lora", serif;
+  font-weight: 700;
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+button {
+  background-color: #FFEBB7;
+  color: #FF734B;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  letter-spacing: 2px;
+  display: inline-block;
+  font-family: "Lora", serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #03C988;
+  color: white;
+}
+
+button:focus {
+  background-color: #FFEBB7;
+  color: #FF734B;
+}
+
+@media screen and (max-width: 600px) {
+  button {
+    padding: .8rem 1.7rem;
+    font-size: 1rem;
+  }
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.players {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #FFEBB7;
+  letter-spacing: 2px;
+}
+
+.players__names, .players__wins {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-family: "Lora", serif;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.players__wins {
+  color: #FF734B;
+  margin-left: 3rem;
+}
+
+.players__wins :not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+.players__names :not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .players__names, .players__wins {
+    gap: 3rem;
+  }
+  .players__wins :not(:last-child) {
+    margin-bottom: 0;
+  }
+  .players__names :not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+.shapes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.blue {
+  width: 30rem;
+  height: 30rem;
+  background-color: #205295;
+  border-radius: 10%;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.blue:hover {
+  -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
+  box-shadow: 1px 1px 15px 13px #F5FFF7;
+}
+
+.green {
+  width: 30rem;
+  height: 30rem;
+  background-color: #379237;
+  border-radius: 10%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.green:hover {
+  -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
+  box-shadow: 1px 1px 15px 13px #F5FFF7;
+}
+
+.red {
+  width: 30rem;
+  height: 30rem;
+  background-color: #CD0404;
+  border-radius: 10%;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.red:hover {
+  -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
+  box-shadow: 1px 1px 15px 13px #F5FFF7;
+}
+
+.yellow {
+  width: 30rem;
+  height: 30rem;
+  background-color: #FFEA20;
+  border-radius: 10%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.yellow:hover {
+  -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
+  box-shadow: 1px 1px 15px 13px #F5FFF7;
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-family: "Lora", serif;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.navigation :not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .navigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .navigation :not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+.is-active {
+  -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
+  box-shadow: 1px 1px 15px 13px #F5FFF7;
+}
+/*# sourceMappingURL=style.css.map */
