@@ -148,11 +148,6 @@ button:focus {
   margin-right: 1rem;
 }
 
-.blue:hover {
-  -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
-  box-shadow: 1px 1px 15px 13px #F5FFF7;
-}
-
 .green {
   width: 30rem;
   height: 30rem;
@@ -160,11 +155,6 @@ button:focus {
   border-radius: 10%;
   display: inline-block;
   cursor: pointer;
-}
-
-.green:hover {
-  -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
-  box-shadow: 1px 1px 15px 13px #F5FFF7;
 }
 
 .red {
@@ -177,11 +167,6 @@ button:focus {
   margin-right: 1rem;
 }
 
-.red:hover {
-  -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
-  box-shadow: 1px 1px 15px 13px #F5FFF7;
-}
-
 .yellow {
   width: 30rem;
   height: 30rem;
@@ -189,11 +174,6 @@ button:focus {
   border-radius: 10%;
   display: inline-block;
   cursor: pointer;
-}
-
-.yellow:hover {
-  -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
-  box-shadow: 1px 1px 15px 13px #F5FFF7;
 }
 
 .navigation {

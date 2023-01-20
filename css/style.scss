@@ -122,7 +122,7 @@ button {
     margin-right: $gap;
 
     &:hover {
-        @include hover;
+        // @include hover;
     }
 }
 
@@ -130,7 +130,7 @@ button {
     @include shapes (#379237);
 
     &:hover {
-        @include hover;
+        // @include hover;
     }
 }
 
@@ -139,7 +139,7 @@ button {
     margin-right: $gap;
 
     &:hover {
-        @include hover;
+        // @include hover;
     }
 }
 
@@ -147,7 +147,7 @@ button {
     @include shapes (#FFEA20);
 
     &:hover {
-        @include hover;
+        // @include hover;
     }
 }
 
