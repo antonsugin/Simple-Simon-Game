@@ -24,59 +24,92 @@ let colorRender = () => {
 
     document.getElementById(colors[ind]).classList.add("is-active");
     activeColors.push(colors[ind]);
+    choosenColors = [];
     setTimeout(() => {document.getElementById(colors[ind]).classList.remove("is-active");}, 200);
     console.log(activeColors)
-    // isTrue(activeColorInd)
-
 }
 
 let isEqual = (activeColorsArray, choosenColorsArray) => {
     // console.log (array[0] === choosenColor[0] ? true : false);
-    console.log(JSON.stringify(activeColorsArray) === JSON.stringify(choosenColorsArray))
-    // console.log (choosenColor)
-    if (activeColorsArray.length === choosenColorsArray.length) {
-        if (JSON.stringify(activeColorsArray) === JSON.stringify(choosenColorsArray)){
-            colorRender();
-            choosenColors = [];
-        }
-        else {
-            alert('false')
-        }
+    // console.log(JSON.stringify(activeColorsArray) === JSON.stringify(choosenColorsArray))
+    // for (let i = 0; i < activeColorsArray.length; i++) {
+    //     console.log(JSON.stringify(activeColorsArray[i]) === JSON.stringify(choosenColorsArray[i]))
+    //     // if (JSON.stringify(activeColorsArray[i]) === JSON.stringify(choosenColorsArray[i])){
+    //     //     console.log(true)
+    //     //     // colorRender();
+    //     // }
+    //     // else false
+    // }
+    // console.log(activeColorsArray)
+    // console.log(choosenColorsArray)
+    // console.log(activeColorsArray.length, choosenColorsArray.length)
 
+    for (let i = 0; i < activeColorsArray.length; i++) {
+        console.log(activeColorsArray[i] === choosenColorsArray[i])
+        console.log(activeColorsArray[i], choosenColorsArray[i])
+        console.log(i)
+        // if (activeColorsArray[i] === choosenColorsArray[i]) {
+        //     chooseColor;
+            
+            
+            
+        // }
+        // else alert('false')
+
+        return activeColorsArray[i] === choosenColorsArray[i] ? true : false
+        
     }
-    // else {
+    
+    
+    // console.log(activeColorsArray)
+    // console.log(choosenColorsArray)
+    
+    // console.log(activeColorsArray.length, choosenColorsArray.length)
+    
+    // console.log(choosenColorsArray)
+    
+
+    // if (activeColorsArray.length === choosenColorsArray.length) {
+    //     for (let i = 0; i < activeColorsArray.length; i++) {
+    //         console.log(activeColorsArray[i] === choosenColorsArray[i])
+            
+    //         // if (JSON.stringify(activeColorsArray[i]) === JSON.stringify(choosenColorsArray[i])){
+    //         //     colorRender();
+    //         //     choosenColors = [];
+    //         // }
+    //         // else {
+    //         //     alert('false')
+    //         // }
+    //     }
 
     // }
 }
-
-// isTrue (activeColorInd,choosenColor )
-// document.addEventListener("click", mySecondFunction);
-
-// const buttonPressed = e => { 
-//     result.innerHTML = `ID of <em>${e.target.innerHTML}</em> is <strong>${e.target.id}</strong>`;
-//   }
-  
-//   for (let button of buttons) {
-//     button.addEventListener("click", buttonPressed);
-//   }
   
 
 const gameColors = document.getElementsByClassName('color');
 
 const colorPressed = event => {
     choosenColors.push(event.target.id);
-    isEqual(choosenColors,activeColors )
+    if (isEqual(activeColors, choosenColors)) {
+        colorRender();
+    }
+    else {
+        
+        alert('false')
+    } 
+    
 }
 
 for (let color of gameColors) {
     color.addEventListener("click", colorPressed);
   }
 
-// colorPressed()
 
-let chooseColor = (color) => {
+let chooseColor = () => {
     
-    document.getElementById("blue").classList.add("is-active");
+    for (let color of gameColors) {
+        color.addEventListener("click", colorPressed);
+      }
 
 }
 
