@@ -1,11 +1,71 @@
 window.onload = () => {
-    colorRender();
+    setNames ();
+    
+
+    // setTimeout(function () {
+    //     document.getElementById("header").innerHTML = 'Ready Player ' + players.namePlayerOne
+        
+    //     }, 1000);
+
+    setTimeout(function () {
+        colorRender();
+        // document.getElementById("header").innerHTML = 'Level ' + level;
+        
+        }, 500);
 
 }
 
 
 
-document.getElementById("start").onclick = () => {isEqual(choosenColors,activeColors )};
+let players = {
+    "namePlayerOne" : "Player 1",
+    "levelPlayerOne" : 0,
+    "namePlayerTwo" : "Player 2",
+    "levelPlayerTwo" : 0
+}
+
+
+// console.log(players.namePlayerOne)
+let level = 0;
+// let playerName = "Player 1";
+// let personName = "Player 2";
+
+
+const starter = () => {
+    level = 0;
+
+}
+
+let personPlayer = '';
+
+let setNames = () => {
+
+    // enabled();
+    // restart();
+    
+    // document.getElementById("header").innerHTML = "Good Luck!!!";
+
+    let capitalizeFirstLetter = (name) => name.charAt(0).toUpperCase() + name.slice(1);
+
+    let player = prompt("Please enter your name", "Player 1");
+    let person = prompt("Please enter your name", "Player 2");
+
+    if (players.namePlayerOne !== null && person !== null) {
+    document.getElementById("prompt-name1").innerHTML = capitalizeFirstLetter(player);
+    // document.getElementById("prompt-player1").innerHTML = capitalizeFirstLetter(player);
+    document.getElementById("prompt-name2").innerHTML = capitalizeFirstLetter(person);
+    // document.getElementById("prompt-player2").innerHTML = capitalizeFirstLetter(person);
+    }
+
+    players.namePlayerOne = capitalizeFirstLetter(player);
+    players.namePlayerTwo = capitalizeFirstLetter(person);
+    personPlayer = players.namePlayerOne;
+}
+
+
+
+
+// document.getElementById("start").onclick = () => {isEqual(choosenColors,activeColors )};
 
 let start = () => {
     document.getElementById("blue").classList.add("is-active");
@@ -20,6 +80,8 @@ let choosenColors = [];
 
 
 let colorRender = () => {
+    level++
+    document.getElementById("header").innerHTML = 'Level ' + level
     let ind = Math.floor(Math.random() * colors.length);
 
     document.getElementById(colors[ind]).classList.add("is-active");
@@ -27,8 +89,29 @@ let colorRender = () => {
     choosenColors = [];
     setTimeout(() => {document.getElementById(colors[ind]).classList.remove("is-active");}, 200);
     console.log(activeColors)
+
+    
 }
+
+const checkLevel = (level) => {
+    // alert('hi')
+    console.log(personPlayer)
+    if (personPlayer) {
+        document.getElementById("win1").innerHTML = players.levelPlayerOne ='Level ' + (level - 1)
+    }
+    else players.levelPlayerTwo = level - 1
+}
+
+
+
+
+// console.log(level)
 // activeColorsArray, choosenColorsArray
+
+// const restartButton = document.getElementById("restart").addEventListener("click", colorRender, 
+// () => {
+//     activeColors = [];
+// });
 
 let isEqual = (currentLevel) => {
 
@@ -42,6 +125,8 @@ let isEqual = (currentLevel) => {
       }
       else {
         activeColors = [];
+        // console.log(level)
+        checkLevel(level)
       }
 
 }    
