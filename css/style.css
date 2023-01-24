@@ -213,4 +213,17 @@ button:focus {
   -webkit-box-shadow: 1px 1px 15px 13px #F5FFF7;
   box-shadow: 1px 1px 15px 13px #F5FFF7;
 }
+
+.is-pressed {
+  -webkit-box-shadow: 1px 1px 15px 13px black;
+  box-shadow: 1px 1px 15px 13px black;
+}
+
+.restart-btn {
+  visibility: hidden;
+}
+
+.wrong {
+  background-color: red;
+}
 /*# sourceMappingURL=style.css.map */

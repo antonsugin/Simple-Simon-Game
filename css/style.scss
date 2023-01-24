@@ -175,3 +175,15 @@ button {
     @include hover;
 }
 
+.is-pressed {
+    -webkit-box-shadow: 1px 1px 15px 13px black; 
+    box-shadow: 1px 1px 15px 13px black;
+}
+
+.restart-btn {
+    visibility: hidden;
+}
+
+.wrong {
+    background-color: red;
+}
