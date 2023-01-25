@@ -75,6 +75,16 @@ button:focus {
       justify-content: space-around;
 }
 
+@media screen and (max-width: 1300px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 3rem;
+  }
+}
+
 .players {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -112,15 +122,28 @@ button:focus {
   margin-bottom: 5rem;
 }
 
-@media screen and (max-width: 600px) {
-  .players__names, .players__wins {
-    gap: 3rem;
-  }
+@media screen and (max-width: 1300px) {
   .players__wins :not(:last-child) {
     margin-bottom: 0;
   }
   .players__names :not(:last-child) {
     margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .players__names, .players__wins {
+    gap: 3rem;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .players__names, .players__wins {
+    font-size: 1.5rem;
+  }
+  .players__wins {
+    margin-left: .5rem;
   }
 }
 
@@ -138,6 +161,12 @@ button:focus {
   gap: 1rem;
 }
 
+@media screen and (max-width: 640px) {
+  .shapes {
+    max-width: 50%;
+  }
+}
+
 .blue {
   width: 30rem;
   height: 30rem;
@@ -148,6 +177,19 @@ button:focus {
   margin-right: 1rem;
 }
 
+@media screen and (max-width: 640px) {
+  .blue {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .blue {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
 .green {
   width: 30rem;
   height: 30rem;
@@ -155,6 +197,13 @@ button:focus {
   border-radius: 10%;
   display: inline-block;
   cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .green {
+    width: 20rem;
+    height: 20rem;
+  }
 }
 
 .red {
@@ -167,6 +216,19 @@ button:focus {
   margin-right: 1rem;
 }
 
+@media screen and (max-width: 640px) {
+  .red {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .red {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
 .yellow {
   width: 30rem;
   height: 30rem;
@@ -174,6 +236,13 @@ button:focus {
   border-radius: 10%;
   display: inline-block;
   cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .yellow {
+    width: 20rem;
+    height: 20rem;
+  }
 }
 
 .navigation {
@@ -204,9 +273,6 @@ button:focus {
             flex-direction: column-reverse;
     gap: 1rem;
   }
-  .navigation :not(:last-child) {
-    margin-bottom: 0;
-  }
 }
 
 .is-active {
@@ -215,8 +281,8 @@ button:focus {
 }
 
 .is-pressed {
-  -webkit-box-shadow: 1px 1px 15px 13px black;
-  box-shadow: 1px 1px 15px 13px black;
+  -webkit-box-shadow: inset 0px 0px 14px 25px #FF734B;
+  box-shadow: inset 0px 0px 14px 25px #FF734B;
 }
 
 .restart-btn {

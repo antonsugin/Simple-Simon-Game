@@ -37,15 +37,7 @@ const header = (player) => {
 }
 
 
-
-const starter = () => {
-    level = 0;
-
-}
-
-
-
-let setNames = () => {
+const setNames = () => {
 
     let capitalizeFirstLetter = (name) => name.charAt(0).toUpperCase() + name.slice(1);
 
@@ -63,7 +55,7 @@ let setNames = () => {
 }
 
 
-let colorRender = () => {
+const colorRender = () => {
     level++;
     document.getElementById("header").innerHTML = 'Level ' + level;
     let ind = Math.floor(Math.random() * colors.length);
@@ -74,22 +66,19 @@ let colorRender = () => {
     setTimeout(() => {document.getElementById(colors[ind]).classList.remove("is-active");}, 200);    
 }
 
-let isEqual = (currentLevel) => {
+
+const isEqual = (currentLevel) => {
 
     if (activeColors[currentLevel] === choosenColors[currentLevel]) {
         if (choosenColors.length === activeColors.length){
         
-        colorRender();
+            setTimeout(() => {colorRender()}, 500);
         }
       }
       else {
         wrong();
         activeColors = [];
-
         checkLevel(level);
-        
-        
-        console.log(personPlayer)
         if (personPlayer !== '') {
             personPlayer = players.namePlayerTwo;
             header(players.namePlayerTwo);
@@ -104,9 +93,10 @@ const colorPressed = event => {
     choosenColors.push(event.target.id);
 
     document.getElementById(event.target.id).classList.add("is-pressed");
-    setTimeout(function () {
+
+    setTimeout(() => {
         document.getElementById(event.target.id).classList.remove("is-pressed");
-      }, 200);
+    }, 200);
 
     isEqual(choosenColors.length - 1)
 }
@@ -127,7 +117,7 @@ const checkLevel = (level) => {
     else {
         players.levelPlayerTwo = level - 1;
         document.getElementById("win2").innerHTML = 'Level ' + players.levelPlayerTwo;
-        console.log(checkWinner(players.levelPlayerOne,players.levelPlayerTwo));
+        checkWinner(players.levelPlayerOne,players.levelPlayerTwo);
         personPlayer = '';
         document.getElementById("restart").style.visibility = "visible";
     }
@@ -173,7 +163,7 @@ const wrong = () => {
 
     document.getElementsByTagName('body')[0].classList.add('wrong');
 
-    setTimeout(function () {
+    setTimeout(() => {
         document.getElementsByTagName('body')[0].classList.remove('wrong');
         
     }, 200);

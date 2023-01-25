@@ -62,7 +62,7 @@ button {
     @media screen and (max-width: 600px) {
         & {
             padding: .8rem 1.7rem;
-            font-size: 1rem;
+            font-size: $gap;
         }
     }
 }
@@ -72,6 +72,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    @media screen and (max-width: 1300px) {
+        & {
+            flex-direction: column;
+            gap: 3rem;
+        }
+    }
 }
 
 .players {
@@ -96,11 +103,7 @@ button {
         margin-bottom: 5rem;
     }
 
-    @media screen and (max-width: 600px) {
-        &__names, &__wins {
-            gap: 3rem;
-        }
-
+    @media screen and (max-width: 1300px) {
         &__wins :not(:last-child){
             margin-bottom: 0;
         }
@@ -108,6 +111,23 @@ button {
             margin-bottom: 0;
         }
     }
+
+    @media screen and (max-width: 600px) {
+        &__names, &__wins {
+            gap: 3rem;
+            font-size: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        &__names, &__wins {
+            font-size: 1.5rem;
+        }
+
+        &__wins {
+            margin-left: .5rem;
+        }
+    }    
 }
 
 .shapes {
@@ -115,40 +135,66 @@ button {
     align-items: center;
     flex-direction: column;
     gap: $gap;
+
+    @media screen and (max-width: 640px) {
+        & {
+            max-width: 50%;   
+        }
+    }    
 }
 
 .blue {
     @include shapes (#205295);
     margin-right: $gap;
 
-    &:hover {
-        // @include hover;
-    }
+    @media screen and (max-width: 640px) {
+        & {
+            margin-bottom: $gap;
+        }
+    }  
+    
+    @media screen and (max-width: 400px) {
+        & {
+            @include media-400px;
+        }
+    }    
 }
 
 .green {
     @include shapes (#379237);
 
-    &:hover {
-        // @include hover;
-    }
+    @media screen and (max-width: 400px) {
+        & {
+            @include media-400px;
+        }
+    }    
 }
 
 .red {
     @include shapes (#CD0404);
     margin-right: $gap;
 
-    &:hover {
-        // @include hover;
-    }
+    @media screen and (max-width: 640px) {
+        & {
+            margin-bottom: $gap;;
+        }
+    }  
+    
+    @media screen and (max-width: 400px) {
+        & {
+            @include media-400px;
+        }
+    }    
 }
 
 .yellow {
     @include shapes (#FFEA20);
 
-    &:hover {
-        // @include hover;
-    }
+    @media screen and (max-width: 400px) {
+        & {
+            @include media-400px;
+        }
+    }    
 }
 
 .navigation {
@@ -163,10 +209,6 @@ button {
             flex-direction: column-reverse;
             gap: 1rem;
         }
-
-        & :not(:last-child) {
-            margin-bottom: 0;
-        }
     }
     
 }
@@ -176,13 +218,14 @@ button {
 }
 
 .is-pressed {
-    -webkit-box-shadow: 1px 1px 15px 13px black; 
-    box-shadow: 1px 1px 15px 13px black;
+    -webkit-box-shadow: inset 0px 0px 14px 25px #FF734B; 
+    box-shadow: inset 0px 0px 14px 25px #FF734B;
 }
 
 .restart-btn {
     visibility: hidden;
 }
+
 
 .wrong {
     background-color: red;
